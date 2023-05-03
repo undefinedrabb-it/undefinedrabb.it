@@ -1,0 +1,51 @@
+---
+---
+
+<div>
+  <h2>Color scheme:</h2>
+  <p>
+    Fairy Floss Dark taken from <a href="https://gogh-co.github.io/Gogh/"
+      >Gogh</a
+    >, but slightly extended
+  </p>
+
+  <div class="grid grid-cols-8 gap-2 p-1">
+    {
+      [
+        "bg-ffd-1",
+        "bg-ffd-2",
+        "bg-ffd-3",
+        "bg-ffd-4",
+        "bg-ffd-5",
+        "bg-ffd-6",
+        "bg-ffd-7",
+        "bg-ffd-8",
+        "bg-ffd-9",
+        "bg-ffd-10",
+        "bg-ffd-11",
+        "bg-ffd-12",
+        "bg-ffd-13",
+        "bg-ffd-14",
+        "bg-ffd-15",
+        "bg-ffd-16",
+        "bg-ffd-17",
+        "bg-ffd-18",
+        "bg-ffd-19",
+        "bg-ffd-20",
+        "bg-ffd-21",
+        "bg-ffd-22",
+        "bg-ffd-23",
+        "bg-ffd-24",
+      ].map((s) => (
+        <span
+          class:list={[
+            s,
+            ` border-2 border-solid border-black
+          outline outline-2 outline-white
+          h-10 w-10`,
+          ]}
+        />
+      ))
+    }
+  </div>
+</div>
