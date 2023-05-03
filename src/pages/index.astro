@@ -1,16 +1,21 @@
 ---
+import ColorScheme from "../components/ColorScheme.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Undefined Rabbit" description="Personal page.">
   <body>
-    <p>Henlo! welcome to me page. There is currently work in progress.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/undefinedrabb-it/" rel="me"
-          >@undefinedrabb-it</a
-        > on Github
-      </li>
-    </ul>
+    <h1 class="mt-10">
+      Henlo! welcome to me page. There is currently work in progress.
+    </h1>
+    <div class="h-card flex flex-col p-14">
+      <span class="p-nickname text-xl">undefinedrabbit</span>
+      <a class="u-url" href="https://undefinedrabb.it">undefinedrabb.it</a>
+      <a class="u-url" href="https://github.com/undefinedrabb-it/" rel="me"
+        >github.com/undefinedrabb-it</a
+      >
+      <span class="p-note">Right now iam experimenting with indieweb</span>
+    </div>
+    <ColorScheme />
   </body>
 </Layout>
