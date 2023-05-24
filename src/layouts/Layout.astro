@@ -1,5 +1,5 @@
 ---
-import '../styles/base.css';
+import "../styles/base.css";
 export interface Props {
   title: string;
   description: string;
@@ -16,16 +16,20 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code"
+    />
     <title>{title}</title>
   </head>
-  <body class="bg-ffd-1 text-ffd-15 flex flex-col items-center justify-center h-screen">
+  <body
+    class="bg-ffd-1 text-ffd-15 flex flex-col items-center justify-center h-screen gap-1"
+  >
     <slot />
   </body>
 </html>
 <style is:global>
-  
   html {
-    font-family: 'Fira Code', sans-serif;
+    font-family: "Fira Code", sans-serif;
   }
 </style>
