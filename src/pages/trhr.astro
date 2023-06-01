@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Trans Right Are Human Right!"
+  description="Trans Right Are Human Right!"
+>
+  <div class="t flex gap-1 flex-col">
+    <div class="h-[80vh]  flag transgender flex justify-center items-center mt-2">
+      <span class="text-black text-3xl lg:text-9xl text-center">
+        Trans Rights <br /> Are <br /> Human Rights!
+      </span>
+    </div>
+    <div class="grow"></div>
+    <div class="flex justify-center">
+      <div class="pb-2">
+        thanks to
+        <a href="https://alvaromontoro.com/blog/68009/lgbtq-flags-coded-in-css">
+          Alvaro Montoro
+        </a>
+        for blog post about flags in css
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @supports (-webkit-touch-callout: none) {
+    .t {
+      height: -webkit-fill-available;
+      width: -webkit-fill-available;
+    }
+  }
+
+  .flag {
+    @apply lg:h-[95vh] lg:w-[95vw] rounded-3xl lg:rounded-[5rem];
+  }
+
+  .flag.transgender {
+    background: linear-gradient(
+      #00d2ff 20%,
+      #ffa6b9 0 40%,
+      white 0 60%,
+      #ffa6b9 0 80%,
+      #00d2ff 0
+    );
+  }
+</style>
