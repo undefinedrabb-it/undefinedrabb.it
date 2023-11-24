@@ -13,11 +13,11 @@
     @apply text-lg;
   }
 
-  a {
+  a.link {
     @apply text-ffd-4 underline underline-offset-2;
   }
 
-  a:visited {
+  a:visited.link {
     @apply text-ffd-20;
   }
 }

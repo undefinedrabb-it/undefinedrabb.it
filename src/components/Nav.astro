@@ -1,0 +1,28 @@
+---
+const currentPath = Astro.url.pathname.split("/")[1];
+const currnetPage = `underline underline-offset-4 decoration-[5px] decoration-ffd-9`;
+---
+
+<nav class="flex flex-row items-center p-5 pr-8 pl-8 z-1">
+  <h1 class=`text-5lx p-2 ${currentPath === "" ?currnetPage:""}`>
+    <a href="/">Undefined Rabbit</a>
+  </h1>
+  <div class="grow"></div>
+  <ul class="flex flex-row items-center gap-8 mr-8">
+    <li class=`${currentPath === "about" ?currnetPage:""}`>
+      <a href="/about">About</a>
+    </li>
+    <li class=`${currentPath === "project" ?currnetPage:""}`>
+      <a href="/project">Project</a>
+    </li>
+    <li class=`${currentPath === "blog" ?currnetPage:""}`>
+      <a href="/blog">Blog (WIP)</a>
+    </li>
+    <li class=`${currentPath === "twt" ?currnetPage:""}`>
+      <a href="/twt"> Microblog (twt) (WIP)</a>
+    </li>
+    <li class=`${currentPath === "contact" ?currnetPage:""}`>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>

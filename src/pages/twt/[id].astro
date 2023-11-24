@@ -1,0 +1,9 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [{ params: { id: "a" } }];
+}
+
+---
+
+<Layout description="aaa" title="a" />

@@ -1,5 +1,7 @@
 ---
+import Nav from "../components/Nav.astro";
 import "../styles/base.css";
+
 export interface Props {
   title: string;
   description: string;
@@ -22,14 +24,34 @@ const { title, description } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body
-    class="bg-ffd-1 text-ffd-15 flex flex-col items-center justify-center h-screen gap-1"
-  >
-    <slot />
+  <body class="bodyGrid bg-ffd-1 text-ffd-15 h-screen">
+    <Nav class="navGrid" />
+    <main
+      class="mainGrid flex flex-col items-center justify-center gap-1"
+    >
+      <slot />
+    </main>
   </body>
 </html>
+
 <style is:global>
   html {
     font-family: "Fira Code", sans-serif;
+  }
+  .bodyGrid {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-rows: fit-content(15%) auto;
+    grid-template-areas:
+      "nav"
+      "main";
+    height: 100vh;
+  }
+  .mainGrid {
+    grid-area: main;
+  }
+
+  .navGrid {
+    grid-area: nav;
   }
 </style>
