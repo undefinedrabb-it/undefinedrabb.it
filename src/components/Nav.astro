@@ -1,6 +1,9 @@
 ---
 const currentPath = Astro.url.pathname.split("/")[1];
 const currnetPage = `underline underline-offset-4 decoration-[5px] decoration-ffd-9`;
+
+const blogFeature= false;
+const twtFeature = false;
 ---
 
 <nav class="flex flex-row items-center p-5 pr-8 pl-8 z-1">
@@ -15,12 +18,16 @@ const currnetPage = `underline underline-offset-4 decoration-[5px] decoration-ff
     <li class=`${currentPath === "project" ?currnetPage:""}`>
       <a href="/project">Project</a>
     </li>
-    <li class=`${currentPath === "blog" ?currnetPage:""}`>
-      <a href="/blog">Blog (WIP)</a>
-    </li>
-    <li class=`${currentPath === "twt" ?currnetPage:""}`>
-      <a href="/twt"> Microblog (twt) (WIP)</a>
-    </li>
+    {blogFeature && (
+      <li class=`${currentPath === "blog" ?currnetPage:""}`>
+       <a href="/blog">Blog (WIP)</a>
+      </li>
+    )}
+    {twtFeature && (
+      <li class=`${currentPath === "twt" ?currnetPage:""}`>
+        <a href="/twt"> Microblog (twt) (WIP)</a>
+      </li>
+    )}
     <li class=`${currentPath === "contact" ?currnetPage:""}`>
       <a href="/contact">Contact</a>
     </li>

@@ -1,8 +1,29 @@
 ---
 import Wip from "../components/Wip.astro";
 import Layout from "../layouts/Layout.astro";
+
+const wipFeature = false;
 ---
 
 <Layout description="About page" title="About - Undefined Rabbit">
-  <Wip />
+  {
+    wipFeature ? (
+      <section>
+        Hi, I'm &lt;<strong>Undefined Rabbit</strong>&gt; Zoe Zając (basically
+        `rabbit` in Polish) (pronouns she/them) (i love brackets). <br />
+        I'm a software engineer which cloudn't decide what want to specializiton
+        in, <br />
+        so iam learning all of them, from webdev, gamedev, to embeded system.
+        <br />
+        Same applays to programming languages, I'm like all of, functional,
+        smoler, mainstream whatever.
+        <br />
+        All of that is only tool to achive goal to educate myself and folowing
+        white rabbit.
+        <br />
+      </section>
+    ) : (
+      <Wip/>
+    )
+  }
 </Layout>
