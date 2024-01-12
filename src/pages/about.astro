@@ -1,29 +1,28 @@
 ---
-import Wip from "../components/Wip.astro";
 import Layout from "../layouts/Layout.astro";
 
-const wipFeature = false;
+const showWip = false;
 ---
 
-<Layout description="About page" title="About - Undefined Rabbit">
-  {
-    wipFeature ? (
-      <section>
-        Hi, I'm &lt;<strong>Undefined Rabbit</strong>&gt; Zoe Zając (basically
-        `rabbit` in Polish) (pronouns she/them) (i love brackets). <br />
-        I'm a software engineer which cloudn't decide what want to specializiton
-        in, <br />
-        so iam learning all of them, from webdev, gamedev, to embeded system.
-        <br />
-        Same applays to programming languages, I'm like all of, functional,
-        smoler, mainstream whatever.
-        <br />
-        All of that is only tool to achive goal to educate myself and folowing
-        white rabbit.
-        <br />
-      </section>
-    ) : (
-      <Wip/>
-    )
-  }
+<Layout
+  description="About page"
+  title="About - Undefined Rabbit"
+  showWip={showWip}
+>
+
+  dodać vaporwave rpg miniaturki etc
+  <section class="text-center">
+    Welcome to the world of <strong>Undefined Rabbit</strong>! I’m Zoe Zając, <br
+    />
+    a passionate software engineer with a curiosity that rivals that of a cat's.<br
+    />
+    I thrive on exploring new technologies, frameworks, and programming languages
+    <br />
+    — each discovery brings me immense joy. Outside of my professional realm, <br
+    />
+    you’ll frequently catch me engrossed in launching fresh projects or staying <br
+    />
+    updated on the latest tech developments, almost as if I’m chasing the <br />
+    elusive white rabbit (though all my bunnies happen to be black). <br />
+  </section>
 </Layout>

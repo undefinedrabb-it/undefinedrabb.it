@@ -1,13 +1,15 @@
 ---
 import Nav from "../components/Nav.astro";
+import Wip from "../components/Wip.astro";
 import "../styles/base.css";
 
 export interface Props {
   title: string;
   description: string;
+  showWip?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, showWip } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,10 +28,8 @@ const { title, description } = Astro.props;
   </head>
   <body class="bodyGrid bg-ffd-1 text-ffd-15 h-screen">
     <Nav class="navGrid" />
-    <main
-      class="mainGrid flex flex-col items-center justify-center gap-1"
-    >
-      <slot />
+    <main class="mainGrid flex flex-col items-center justify-center gap-1">
+      {showWip ? <Wip /> : <slot />}
     </main>
   </body>
 </html>
