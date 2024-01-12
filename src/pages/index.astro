@@ -1,12 +1,12 @@
 ---
+import { Figure } from "../components/react/figure";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Undefined Rabbit" description="Personal page.">
   <div class="grow">
     <div class="flex flex-col">
-      <p>aaaa</p>
-      <p>a</p>
+      <Figure client:load />
     </div>
   </div>
   <div class="flex flex-row justify-start w-full">
