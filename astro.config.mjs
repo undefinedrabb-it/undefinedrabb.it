@@ -13,8 +13,13 @@ export default defineConfig({
     }
   }), react()],
   vite: {
+    
     ssr: {
       noExternal: ["react-icons"],
     },
+    build: {
+      chunkSizeWarningLimit: 1000,
+    }
   },
+
 });

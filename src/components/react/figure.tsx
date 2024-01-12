@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import * as THREE from "three";
-import { Reflector, GLTFLoader, EffectComposer, RenderPass, BloomPass, ShaderPass, OutputPass } from "three/examples/jsm/Addons";
-import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module";
+import { Reflector, GLTFLoader, EffectComposer, RenderPass, BloomPass, ShaderPass, OutputPass } from "three/examples/jsm/Addons.js";
+import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 
 const w = 800;
 const h = 600;
