@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 import * as THREE from "three";
-import { Reflector, GLTFLoader, EffectComposer, RenderPass, BloomPass, ShaderPass, OutputPass } from "three/examples/jsm/Addons.js";
+import {
+  Reflector,
+  GLTFLoader,
+  EffectComposer,
+  RenderPass,
+  BloomPass,
+  ShaderPass,
+  OutputPass,
+} from "three/examples/jsm/Addons.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 
 const w = 800;
@@ -10,12 +18,7 @@ const main = async () => {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x42395d);
 
-  const camera = new THREE.PerspectiveCamera(
-    45,
-    w / h,
-    1,
-    100
-  );
+  const camera = new THREE.PerspectiveCamera(45, w / h, 1, 100);
   camera.position.set(0, 1, -50);
   camera.lookAt(0, 0, 0);
 
@@ -26,7 +29,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
   scene.add(
     (() => {
@@ -35,7 +38,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
   scene.add(
     (() => {
@@ -44,7 +47,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
 
   scene.add(
@@ -54,7 +57,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
 
   // Pink light
@@ -65,7 +68,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
 
   // Blue light
@@ -76,7 +79,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
 
   // Purple light
@@ -87,7 +90,7 @@ const main = async () => {
       light.lookAt(0, 0, 0);
       light.castShadow = true;
       return light;
-    })()
+    })(),
   );
 
   // Create a reflector
@@ -150,7 +153,7 @@ const main = async () => {
   const renderer = (() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(w,h);
+    renderer.setSize(w, h);
     renderer.shadowMap.enabled = true;
     return renderer;
   })();
@@ -158,10 +161,7 @@ const main = async () => {
   const container = document.getElementById("container")!;
   container.appendChild(renderer.domElement);
 
-  const {
-    composer,
-    uniforms: { },
-  } = (() => {
+  const { composer } = (() => {
     const composer = new EffectComposer(renderer);
 
     const renderPass = new RenderPass(scene, camera);
@@ -172,7 +172,7 @@ const main = async () => {
 
     const vertexShader = `
     varying vec2 vUv;
-    
+
     void main() {
       vUv = uv;
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
@@ -184,15 +184,15 @@ const main = async () => {
       varying vec2 vUv;
       uniform sampler2D tDiffuse;
       uniform float amount;
-      
+
       void main() {
         vec2 uv = vUv;
         vec2 offset = amount * (vUv - 0.5); // Adjust amount for the strength of chromatic aberration
-        
+
         vec4 red = texture2D(tDiffuse, uv - offset); // Red channel
         vec4 green = texture2D(tDiffuse, uv + 0.5 * vec2(offset.x,-offset.y)  );       // Green channel
         vec4 blue = texture2D(tDiffuse, uv + offset);// Blue channel
-        
+
         gl_FragColor = vec4(red.r, green.g, blue.b, 1.0);
       }
       `;
@@ -215,7 +215,7 @@ const main = async () => {
     const outputPass = new OutputPass();
     composer.addPass(outputPass);
 
-    return { composer, uniforms: {} };
+    return { composer };
   })();
 
   const animate = () => {
@@ -228,14 +228,9 @@ const main = async () => {
   animate();
 };
 
-
-export function Figure({ }: {}) {
+export function Figure() {
   useEffect(() => {
     main().catch(console.error);
   }, []);
-  return (
-    <div id="container" style={{maxWidth:"100px"}}></div>
-
-  )
+  return <div id="container" style={{ maxWidth: "100px" }}></div>;
 }
-

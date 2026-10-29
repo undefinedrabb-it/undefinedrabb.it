@@ -1,6 +1,6 @@
 ### Description
 
- My personal page.
+My personal page.
 
 # undefinedrabb.it
 
@@ -11,7 +11,7 @@ Source code to my personal page.
 ## Quick Start
 
 You only need the `nodejs` package. <br/>
-Verified compatibility with node version `20.x.y`.
+Verified compatibility with node version `24.x.y`.
 
 ### Usage
 
@@ -22,4 +22,4 @@ pnpm run dev
 
 ## Contributions
 
-If you would like to contribute feel free to create an issue, fork and create a PR. 
+If you would like to contribute feel free to create an issue, fork and create a PR.

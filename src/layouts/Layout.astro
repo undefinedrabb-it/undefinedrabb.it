@@ -1,7 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 import Wip from "../components/Wip.astro";
-import "../styles/base.css";
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -12,7 +12,7 @@ export interface Props {
 const { title, description, showWip } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,17 +20,12 @@ const { title, description, showWip } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fira+Code"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code" />
     <title>{title}</title>
   </head>
   <body class="bodyGrid bg-ffd-1 text-ffd-15 h-screen">
     <Nav class="navGrid" />
-    <main class="mainGrid flex flex-col items-center justify-center gap-1">
-      {showWip ? <Wip /> : <slot />}
-    </main>
+    <main class="mainGrid flex flex-col items-center justify-center gap-1">{showWip ? <Wip /> : <slot />}</main>
   </body>
 </html>
 

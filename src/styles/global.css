@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+
+:root {
+  --color-ffd-1: hsl(255, 24%, 29%);
+  --color-ffd-9: hsl(292, 21%, 40%);
+
+  --color-ffd-2: hsl(353, 23%, 56%);
+  --color-ffd-10: hsl(339, 100%, 86%);
+
+  --color-ffd-3: hsl(3, 100%, 75%);
+  --color-ffd-11: hsl(338, 85%, 64%);
+
+  --color-ffd-4: hsl(50, 100%, 45%);
+  --color-ffd-12: hsl(43, 70%, 49%);
+  --color-ffd-20: hsl(43, 70%, 40%);
+
+  --color-ffd-5: hsl(261, 100%, 75%);
+  --color-ffd-13: hsl(262, 100%, 82%);
+
+  --color-ffd-6: hsl(252, 20%, 50%);
+  --color-ffd-14: hsl(251, 22%, 56%);
+
+  --color-ffd-7: hsl(149, 100%, 88%);
+  --color-ffd-15: hsl(180, 100%, 88%);
+  /* --color-ffd-23: hsl(180, 100%, 88%); */
+
+  --color-ffd-8: hsl(60, 30%, 96%);
+  --color-ffd-16: hsl(60, 33%, 96%);
+  /* --color-ffd-24: hsl(60, 40%, 96%); */
+}
+
+@theme {
+  /* Fairy Floss Dark gogh */
+  --color-ffd-1: #42395d;
+  --color-ffd-9: #75507b;
+
+  --color-ffd-2: #a8757b;
+  --color-ffd-10: #ffb8d1;
+
+  --color-ffd-3: #ff857f;
+  --color-ffd-11: #f1568e;
+
+  --color-ffd-4: #e6c000;
+  --color-ffd-12: #d5a425;
+  --color-ffd-20: #ad851e;
+
+  --color-ffd-5: #ae81ff;
+  --color-ffd-13: #c5a3ff;
+
+  --color-ffd-6: #716799;
+  --color-ffd-14: #8077a8;
+
+  --color-ffd-7: #c2ffdf;
+  --color-ffd-15: #c2ffff;
+
+  --color-ffd-8: #f8f8f2;
+  --color-ffd-16: #f8f8f0;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+a.link {
+  @apply text-ffd-4 underline underline-offset-2;
+}
+
+a:visited.link {
+  @apply text-ffd-20;
+}
